@@ -1,10 +1,12 @@
 <?php
 
-namespace Wallo\FilamentCompanies;
+namespace TFSThiagoBR98\FilamentTenant;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Carbon;
+use Stancl\Tenancy\Database\Concerns\CentralConnection;
+use TFSThiagoBR98\FilamentTenant\Models\BaseModelMedia;
 
 /**
  * @property int $id
@@ -16,8 +18,10 @@ use Illuminate\Support\Carbon;
  * @property string|null $refresh_token
  * @property Carbon|null $expires_at
  */
-abstract class ConnectedAccount extends Model
+abstract class ConnectedAccount extends BaseModelMedia
 {
+    use CentralConnection;
+
     /**
      * Get the credentials used for authenticating services.
      */

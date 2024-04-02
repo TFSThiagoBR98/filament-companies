@@ -1,6 +1,6 @@
 <?php
 
-namespace Wallo\FilamentCompanies\Actions;
+namespace TFSThiagoBR98\FilamentTenant\Actions;
 
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Support\Facades\Gate;

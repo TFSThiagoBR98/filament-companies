@@ -1,12 +1,12 @@
 <?php
 
-namespace Wallo\FilamentCompanies\Mail;
+namespace TFSThiagoBR98\FilamentTenant\Mail;
 
 use App\Models\CompanyInvitation as CompanyInvitationModel;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
-use Wallo\FilamentCompanies\FilamentCompanies;
+use TFSThiagoBR98\FilamentTenant\FilamentCompanies;
 
 class CompanyInvitation extends Mailable
 {

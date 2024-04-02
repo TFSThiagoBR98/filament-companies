@@ -1,6 +1,6 @@
 <?php
 
-namespace Wallo\FilamentCompanies\Contracts;
+namespace TFSThiagoBR98\FilamentTenant\Contracts;
 
 /**
  * @method void delete(\Illuminate\Foundation\Auth\User $user)

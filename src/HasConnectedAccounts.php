@@ -1,6 +1,6 @@
 <?php
 
-namespace Wallo\FilamentCompanies;
+namespace TFSThiagoBR98\FilamentTenant;
 
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;

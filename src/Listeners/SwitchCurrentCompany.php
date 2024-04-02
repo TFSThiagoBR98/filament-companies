@@ -1,10 +1,10 @@
 <?php
 
-namespace Wallo\FilamentCompanies\Listeners;
+namespace TFSThiagoBR98\FilamentTenant\Listeners;
 
 use Filament\Events\TenantSet;
-use Wallo\FilamentCompanies\FilamentCompanies;
-use Wallo\FilamentCompanies\HasCompanies;
+use TFSThiagoBR98\FilamentTenant\FilamentCompanies;
+use TFSThiagoBR98\FilamentTenant\HasCompanies;
 
 class SwitchCurrentCompany
 {

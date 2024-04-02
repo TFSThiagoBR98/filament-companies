@@ -1,6 +1,6 @@
 <?php
 
-namespace Wallo\FilamentCompanies\Http\Livewire;
+namespace TFSThiagoBR98\FilamentTenant\Http\Livewire;
 
 use DeviceDetector\DeviceDetector;
 use Filament\Facades\Filament;

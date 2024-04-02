@@ -1,10 +1,10 @@
 <?php
 
-namespace Wallo\FilamentCompanies\Pages\Auth;
+namespace TFSThiagoBR98\FilamentTenant\Pages\Auth;
 
 use Filament\Forms\Form;
-use Filament\Pages\Auth\Login as FilamentLogin;
-use Wallo\FilamentCompanies\FilamentCompanies;
+use TFSThiagoBR98\FilamentTenant\FilamentCompanies;
+use TFSThiagoBR98\FilamentTwoFactor\Http\Livewire\Auth\Login as FilamentLogin;
 
 class Login extends FilamentLogin
 {

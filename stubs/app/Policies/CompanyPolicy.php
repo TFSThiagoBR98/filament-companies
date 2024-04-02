@@ -4,16 +4,19 @@ namespace App\Policies;
 
 use App\Models\Company;
 use App\Models\User;
-use Illuminate\Auth\Access\HandlesAuthorization;
+use Illuminate\Database\Eloquent\Model;
 
-class CompanyPolicy
+class CompanyPolicy extends BasePolicy
 {
-    use HandlesAuthorization;
+    /**
+     * @var string
+     */
+    protected string $model = Company::class;
 
     /**
      * Determine whether the user can view any models.
      */
-    public function viewAny(User $user): bool
+    public function viewAny(?User $user, ?Model $model = null, ?array $injectedArgs = null): bool
     {
         return true;
     }
@@ -21,15 +24,15 @@ class CompanyPolicy
     /**
      * Determine whether the user can view the model.
      */
-    public function view(User $user, Company $company): bool
+    public function view(?User $user, ?Model $model = null, ?array $injectedArgs = null): bool
     {
-        return $user->belongsToCompany($company);
+        return $user->belongsToCompany($model);
     }
 
     /**
      * Determine whether the user can create models.
      */
-    public function create(User $user): bool
+    public function create(?User $user, ?array $injectedArgs = null, ?Model $model = null): bool
     {
         return true;
     }
@@ -37,9 +40,9 @@ class CompanyPolicy
     /**
      * Determine whether the user can update the model.
      */
-    public function update(User $user, Company $company): bool
+    public function update(?User $user, ?Model $model = null, ?array $injectedArgs = null): bool
     {
-        return $user->ownsCompany($company);
+        return $user->ownsCompany($model);
     }
 
     /**
@@ -69,8 +72,8 @@ class CompanyPolicy
     /**
      * Determine whether the user can delete the model.
      */
-    public function delete(User $user, Company $company): bool
+    public function delete(?User $user, ?Model $model = null, ?array $injectedArgs = null): bool
     {
-        return $user->ownsCompany($company);
+        return $user->ownsCompany($model);
     }
 }

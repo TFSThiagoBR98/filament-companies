@@ -1,9 +1,9 @@
 <?php
 
-namespace Wallo\FilamentCompanies\Rules;
+namespace TFSThiagoBR98\FilamentTenant\Rules;
 
 use Illuminate\Contracts\Validation\Rule;
-use Wallo\FilamentCompanies\FilamentCompanies;
+use TFSThiagoBR98\FilamentTenant\FilamentCompanies;
 
 class Role implements Rule
 {

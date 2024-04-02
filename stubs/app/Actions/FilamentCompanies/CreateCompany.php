@@ -7,9 +7,9 @@ use App\Models\User;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Validator;
-use Wallo\FilamentCompanies\Contracts\CreatesCompanies;
-use Wallo\FilamentCompanies\Events\AddingCompany;
-use Wallo\FilamentCompanies\FilamentCompanies;
+use TFSThiagoBR98\FilamentTenant\Contracts\CreatesCompanies;
+use TFSThiagoBR98\FilamentTenant\Events\AddingCompany;
+use TFSThiagoBR98\FilamentTenant\FilamentCompanies;
 
 class CreateCompany implements CreatesCompanies
 {

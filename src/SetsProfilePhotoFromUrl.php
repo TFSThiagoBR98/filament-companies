@@ -1,6 +1,6 @@
 <?php
 
-namespace Wallo\FilamentCompanies;
+namespace TFSThiagoBR98\FilamentTenant;
 
 use Filament\Notifications\Notification;
 use Illuminate\Http\UploadedFile;

@@ -1,10 +1,10 @@
 <?php
 
-namespace Wallo\FilamentCompanies\Concerns\Socialite;
+namespace TFSThiagoBR98\FilamentTenant\Concerns\Socialite;
 
 use InvalidArgumentException;
 use ValueError;
-use Wallo\FilamentCompanies\Enums\Feature;
+use TFSThiagoBR98\FilamentTenant\Enums\Feature;
 
 trait HasProviderFeatures
 {

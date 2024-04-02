@@ -1,9 +1,9 @@
 <?php
 
-namespace Wallo\FilamentCompanies\Enums;
+namespace TFSThiagoBR98\FilamentTenant\Enums;
 
 use Filament\Support\Contracts\HasLabel;
-use Wallo\FilamentCompanies\FilamentCompanies;
+use TFSThiagoBR98\FilamentTenant\FilamentCompanies;
 
 enum Feature: string implements HasLabel
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Wallo\FilamentCompanies\Pages\Auth;
+namespace TFSThiagoBR98\FilamentTenant\Pages\Auth;
 
 use Filament\Forms\Components\Checkbox;
 use Filament\Forms\Components\Component;
@@ -8,7 +8,7 @@ use Filament\Forms\Form;
 use Filament\Pages\Auth\Register as FilamentRegister;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\HtmlString;
-use Wallo\FilamentCompanies\FilamentCompanies;
+use TFSThiagoBR98\FilamentTenant\FilamentCompanies;
 
 class Register extends FilamentRegister
 {

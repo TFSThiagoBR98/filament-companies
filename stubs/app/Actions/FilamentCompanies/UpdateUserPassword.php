@@ -5,7 +5,7 @@ namespace App\Actions\FilamentCompanies;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
-use Wallo\FilamentCompanies\Contracts\UpdatesUserPasswords;
+use TFSThiagoBR98\FilamentTenant\Contracts\UpdatesUserPasswords;
 
 class UpdateUserPassword implements UpdatesUserPasswords
 {

@@ -4,9 +4,9 @@ namespace App\Actions\FilamentCompanies;
 
 use Illuminate\Contracts\Auth\Authenticatable;
 use Laravel\Socialite\Contracts\User as ProviderUser;
-use Wallo\FilamentCompanies\ConnectedAccount;
-use Wallo\FilamentCompanies\Contracts\CreatesConnectedAccounts;
-use Wallo\FilamentCompanies\FilamentCompanies;
+use TFSThiagoBR98\FilamentTenant\ConnectedAccount;
+use TFSThiagoBR98\FilamentTenant\Contracts\CreatesConnectedAccounts;
+use TFSThiagoBR98\FilamentTenant\FilamentCompanies;
 
 class CreateConnectedAccount implements CreatesConnectedAccounts
 {

@@ -7,7 +7,7 @@ use App\Models\User;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Validator;
-use Wallo\FilamentCompanies\Contracts\UpdatesCompanyNames;
+use TFSThiagoBR98\FilamentTenant\Contracts\UpdatesCompanyNames;
 
 class UpdateCompanyName implements UpdatesCompanyNames
 {

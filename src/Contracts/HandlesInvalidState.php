@@ -1,6 +1,6 @@
 <?php
 
-namespace Wallo\FilamentCompanies\Contracts;
+namespace TFSThiagoBR98\FilamentTenant\Contracts;
 
 use Illuminate\Http\Response;
 use Laravel\Socialite\Two\InvalidStateException;

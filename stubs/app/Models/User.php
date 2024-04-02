@@ -2,27 +2,10 @@
 
 namespace App\Models;
 
-use Filament\Models\Contracts\FilamentUser;
-use Filament\Models\Contracts\HasAvatar;
-use Filament\Models\Contracts\HasDefaultTenant;
-use Filament\Models\Contracts\HasTenants;
-use Filament\Panel;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
-use Illuminate\Support\Collection;
-use Laravel\Sanctum\HasApiTokens;
-use Wallo\FilamentCompanies\HasCompanies;
-use Wallo\FilamentCompanies\HasProfilePhoto;
+use TFSThiagoBR98\FilamentTenant\Models\BaseModelMediaAuthenticatable;
 
-class User extends Authenticatable implements FilamentUser, HasAvatar, HasDefaultTenant, HasTenants
+class User extends BaseModelMediaAuthenticatable
 {
-    use HasApiTokens;
-    use HasCompanies;
-    use HasFactory;
-    use HasProfilePhoto;
-    use Notifiable;
 
     /**
      * The attributes that are mass assignable.
@@ -65,30 +48,5 @@ class User extends Authenticatable implements FilamentUser, HasAvatar, HasDefaul
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
-    }
-
-    public function canAccessPanel(Panel $panel): bool
-    {
-        return true;
-    }
-
-    public function canAccessTenant(Model $tenant): bool
-    {
-        return $this->belongsToCompany($tenant);
-    }
-
-    public function getTenants(Panel $panel): array | Collection
-    {
-        return $this->allCompanies();
-    }
-
-    public function getDefaultTenant(Panel $panel): ?Model
-    {
-        return $this->currentCompany;
-    }
-
-    public function getFilamentAvatarUrl(): string
-    {
-        return $this->profile_photo_url;
     }
 }

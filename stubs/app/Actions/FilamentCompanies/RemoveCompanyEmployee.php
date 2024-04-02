@@ -7,8 +7,8 @@ use App\Models\User;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Validation\ValidationException;
-use Wallo\FilamentCompanies\Contracts\RemovesCompanyEmployees;
-use Wallo\FilamentCompanies\Events\CompanyEmployeeRemoved;
+use TFSThiagoBR98\FilamentTenant\Contracts\RemovesCompanyEmployees;
+use TFSThiagoBR98\FilamentTenant\Events\CompanyEmployeeRemoved;
 
 class RemoveCompanyEmployee implements RemovesCompanyEmployees
 {

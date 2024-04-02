@@ -12,11 +12,11 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Collection;
-use Laravel\Sanctum\HasApiTokens;
-use Wallo\FilamentCompanies\HasCompanies;
-use Wallo\FilamentCompanies\HasConnectedAccounts;
-use Wallo\FilamentCompanies\HasProfilePhoto;
-use Wallo\FilamentCompanies\SetsProfilePhotoFromUrl;
+use Laravel\Passport\HasApiTokens;
+use TFSThiagoBR98\FilamentTenant\HasCompanies;
+use TFSThiagoBR98\FilamentTenant\HasConnectedAccounts;
+use TFSThiagoBR98\FilamentTenant\HasProfilePhoto;
+use TFSThiagoBR98\FilamentTenant\SetsProfilePhotoFromUrl;
 
 class User extends Authenticatable implements FilamentUser, HasAvatar, HasDefaultTenant, HasTenants
 {

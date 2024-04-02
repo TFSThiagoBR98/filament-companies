@@ -1,6 +1,6 @@
 <?php
 
-namespace Wallo\FilamentCompanies\Http\Livewire;
+namespace TFSThiagoBR98\FilamentTenant\Http\Livewire;
 
 use Filament\Notifications\Notification;
 use Illuminate\Contracts\Auth\Authenticatable;
@@ -11,10 +11,10 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Livewire\Component;
 use Livewire\Features\SupportRedirects\Redirector;
-use Wallo\FilamentCompanies\ConnectedAccount;
-use Wallo\FilamentCompanies\Enums\Feature;
-use Wallo\FilamentCompanies\FilamentCompanies;
-use Wallo\FilamentCompanies\Pages\User\Profile;
+use TFSThiagoBR98\FilamentTenant\ConnectedAccount;
+use TFSThiagoBR98\FilamentTenant\Enums\Feature;
+use TFSThiagoBR98\FilamentTenant\FilamentCompanies;
+use TFSThiagoBR98\FilamentTenant\Pages\User\Profile;
 
 class ConnectedAccountsForm extends Component
 {

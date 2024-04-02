@@ -1,6 +1,6 @@
 <?php
 
-namespace Wallo\FilamentCompanies\Events;
+namespace TFSThiagoBR98\FilamentTenant\Events;
 
 class ConnectedAccountDeleted extends ConnectedAccountEvent
 {

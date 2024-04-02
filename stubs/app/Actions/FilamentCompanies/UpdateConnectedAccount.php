@@ -5,8 +5,8 @@ namespace App\Actions\FilamentCompanies;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Support\Facades\Gate;
 use Laravel\Socialite\Contracts\User;
-use Wallo\FilamentCompanies\ConnectedAccount;
-use Wallo\FilamentCompanies\Contracts\UpdatesConnectedAccounts;
+use TFSThiagoBR98\FilamentTenant\ConnectedAccount;
+use TFSThiagoBR98\FilamentTenant\Contracts\UpdatesConnectedAccounts;
 
 class UpdateConnectedAccount implements UpdatesConnectedAccounts
 {

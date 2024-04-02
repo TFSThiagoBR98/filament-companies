@@ -1,18 +1,18 @@
 <?php
 
-namespace Wallo\FilamentCompanies;
+namespace TFSThiagoBR98\FilamentTenant;
 
 use Illuminate\Support\ServiceProvider;
 use Livewire\Livewire;
-use Wallo\FilamentCompanies\Http\Livewire\CompanyEmployeeManager;
-use Wallo\FilamentCompanies\Http\Livewire\ConnectedAccountsForm;
-use Wallo\FilamentCompanies\Http\Livewire\DeleteCompanyForm;
-use Wallo\FilamentCompanies\Http\Livewire\DeleteUserForm;
-use Wallo\FilamentCompanies\Http\Livewire\LogoutOtherBrowserSessionsForm;
-use Wallo\FilamentCompanies\Http\Livewire\SetPasswordForm;
-use Wallo\FilamentCompanies\Http\Livewire\UpdateCompanyNameForm;
-use Wallo\FilamentCompanies\Http\Livewire\UpdatePasswordForm;
-use Wallo\FilamentCompanies\Http\Livewire\UpdateProfileInformationForm;
+use TFSThiagoBR98\FilamentTenant\Http\Livewire\CompanyEmployeeManager;
+use TFSThiagoBR98\FilamentTenant\Http\Livewire\ConnectedAccountsForm;
+use TFSThiagoBR98\FilamentTenant\Http\Livewire\DeleteCompanyForm;
+use TFSThiagoBR98\FilamentTenant\Http\Livewire\DeleteUserForm;
+use TFSThiagoBR98\FilamentTenant\Http\Livewire\LogoutOtherBrowserSessionsForm;
+use TFSThiagoBR98\FilamentTenant\Http\Livewire\SetPasswordForm;
+use TFSThiagoBR98\FilamentTenant\Http\Livewire\UpdateCompanyNameForm;
+use TFSThiagoBR98\FilamentTenant\Http\Livewire\UpdatePasswordForm;
+use TFSThiagoBR98\FilamentTenant\Http\Livewire\UpdateProfileInformationForm;
 
 class FilamentCompaniesServiceProvider extends ServiceProvider
 {

@@ -6,10 +6,10 @@ use App\Models\Company;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
 use Laravel\Socialite\Contracts\User as ProviderUserContract;
-use Wallo\FilamentCompanies\Contracts\CreatesConnectedAccounts;
-use Wallo\FilamentCompanies\Contracts\CreatesUserFromProvider;
-use Wallo\FilamentCompanies\Enums\Feature;
-use Wallo\FilamentCompanies\FilamentCompanies;
+use TFSThiagoBR98\FilamentTenant\Contracts\CreatesConnectedAccounts;
+use TFSThiagoBR98\FilamentTenant\Contracts\CreatesUserFromProvider;
+use TFSThiagoBR98\FilamentTenant\Enums\Feature;
+use TFSThiagoBR98\FilamentTenant\FilamentCompanies;
 
 class CreateUserFromProvider implements CreatesUserFromProvider
 {

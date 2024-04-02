@@ -4,8 +4,8 @@ namespace App\Actions\FilamentCompanies;
 
 use Laravel\Socialite\Contracts\User;
 use Laravel\Socialite\Facades\Socialite;
-use Wallo\FilamentCompanies\Contracts\ResolvesSocialiteUsers;
-use Wallo\FilamentCompanies\Enums\Feature;
+use TFSThiagoBR98\FilamentTenant\Contracts\ResolvesSocialiteUsers;
+use TFSThiagoBR98\FilamentTenant\Enums\Feature;
 
 class ResolveSocialiteUser implements ResolvesSocialiteUsers
 {

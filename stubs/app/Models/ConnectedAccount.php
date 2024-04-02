@@ -3,10 +3,10 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Concerns\HasTimestamps;
-use Wallo\FilamentCompanies\ConnectedAccount as SocialiteConnectedAccount;
-use Wallo\FilamentCompanies\Events\ConnectedAccountCreated;
-use Wallo\FilamentCompanies\Events\ConnectedAccountDeleted;
-use Wallo\FilamentCompanies\Events\ConnectedAccountUpdated;
+use TFSThiagoBR98\FilamentTenant\ConnectedAccount as SocialiteConnectedAccount;
+use TFSThiagoBR98\FilamentTenant\Events\ConnectedAccountCreated;
+use TFSThiagoBR98\FilamentTenant\Events\ConnectedAccountDeleted;
+use TFSThiagoBR98\FilamentTenant\Events\ConnectedAccountUpdated;
 
 class ConnectedAccount extends SocialiteConnectedAccount
 {

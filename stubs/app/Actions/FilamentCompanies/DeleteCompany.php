@@ -3,7 +3,7 @@
 namespace App\Actions\FilamentCompanies;
 
 use App\Models\Company;
-use Wallo\FilamentCompanies\Contracts\DeletesCompanies;
+use TFSThiagoBR98\FilamentTenant\Contracts\DeletesCompanies;
 
 class DeleteCompany implements DeletesCompanies
 {

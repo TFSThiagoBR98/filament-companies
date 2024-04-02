@@ -4,7 +4,7 @@ namespace App\Actions\FilamentCompanies;
 
 use Illuminate\Http\Response;
 use Laravel\Socialite\Two\InvalidStateException;
-use Wallo\FilamentCompanies\Contracts\HandlesInvalidState;
+use TFSThiagoBR98\FilamentTenant\Contracts\HandlesInvalidState;
 
 class HandleInvalidState implements HandlesInvalidState
 {

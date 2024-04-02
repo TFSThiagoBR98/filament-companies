@@ -1,6 +1,6 @@
 <?php
 
-namespace Wallo\FilamentCompanies\Console;
+namespace TFSThiagoBR98\FilamentTenant\Console;
 
 use Illuminate\Console\Command;
 use Illuminate\Filesystem\Filesystem;
@@ -128,8 +128,9 @@ class InstallCommand extends Command
      */
     protected function prepareForInstallation(): bool
     {
-        // Sanctum...
+        // Passport...
         $this->call('install:api', [
+            '--passport' => true,
             '--without-migration-prompt' => true,
         ]);
 

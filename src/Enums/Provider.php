@@ -1,10 +1,10 @@
 <?php
 
-namespace Wallo\FilamentCompanies\Enums;
+namespace TFSThiagoBR98\FilamentTenant\Enums;
 
 use Filament\Support\Contracts\HasLabel;
 use Illuminate\Contracts\View\View;
-use Wallo\FilamentCompanies\FilamentCompanies;
+use TFSThiagoBR98\FilamentTenant\FilamentCompanies;
 
 enum Provider: string implements HasLabel
 {

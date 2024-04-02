@@ -1,14 +1,14 @@
 <?php
 
-namespace Wallo\FilamentCompanies\Http\Livewire;
+namespace TFSThiagoBR98\FilamentTenant\Http\Livewire;
 
 use Filament\Notifications\Notification;
 use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
-use Wallo\FilamentCompanies\Contracts\UpdatesUserPasswords;
-use Wallo\FilamentCompanies\FilamentCompanies;
+use TFSThiagoBR98\FilamentTenant\Contracts\UpdatesUserPasswords;
+use TFSThiagoBR98\FilamentTenant\FilamentCompanies;
 
 class UpdatePasswordForm extends Component
 {

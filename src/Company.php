@@ -1,21 +1,74 @@
 <?php
 
-namespace Wallo\FilamentCompanies;
+namespace TFSThiagoBR98\FilamentTenant;
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Collection;
+use Spatie\Sluggable\HasSlug;
+use Spatie\Sluggable\SlugOptions;
+use Stancl\Tenancy\Database\Concerns\CentralConnection;
+use Stancl\Tenancy\Database\Concerns\HasDatabase;
+use Stancl\Tenancy\Database\Concerns\HasDomains;
+use Stancl\Tenancy\Database\Concerns\InvalidatesResolverCache;
+use Stancl\Tenancy\Database\Concerns\TenantRun;
+use TFSThiagoBR98\FilamentTenant\Models\BaseModelMedia;
+use Filament\Models\Contracts\HasAvatar;
 
-abstract class Company extends Model
+abstract class Company extends BaseModelMedia implements HasAvatar
 {
+    use HasDatabase;
+    use HasDomains;
+    use CentralConnection;
+    use HasSlug;
+    use TenantRun;
+    use InvalidatesResolverCache;
+
+    protected $dispatchesEvents = [
+        'saving' => Events\SavingTenant::class,
+        'saved' => Events\TenantSaved::class,
+        'creating' => Events\CreatingTenant::class,
+        'created' => Events\TenantCreated::class,
+        'updating' => Events\UpdatingTenant::class,
+        'updated' => Events\TenantUpdated::class,
+        'deleting' => Events\DeletingTenant::class,
+        'deleted' => Events\TenantDeleted::class,
+    ];
+
     /**
      * Get the owner of the company.
      */
     public function owner(): BelongsTo
     {
         return $this->belongsTo(FilamentCompanies::userModel(), 'user_id');
+    }
+
+    public function getFilamentAvatarUrl(): string
+    {
+        return $this->owner->profile_photo_url;
+    }
+
+    public function getTenantKeyName(): string
+    {
+        return 'slug';
+    }
+
+    public function getTenantKey()
+    {
+        return $this->getAttribute($this->getTenantKeyName());
+    }
+
+    /**
+     * Get the options for generating the slug.
+     */
+    public function getSlugOptions() : SlugOptions
+    {
+        return SlugOptions::create()
+            ->generateSlugsFrom('name')
+            ->slugsShouldBeNoLongerThan(15)
+            ->preventOverwrite()
+            ->saveSlugsTo('slug');
     }
 
     /**

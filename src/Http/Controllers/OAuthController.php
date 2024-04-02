@@ -1,6 +1,6 @@
 <?php
 
-namespace Wallo\FilamentCompanies\Http\Controllers;
+namespace TFSThiagoBR98\FilamentTenant\Http\Controllers;
 
 use Filament\Facades\Filament;
 use Filament\Http\Responses\Auth\LoginResponse;
@@ -15,16 +15,16 @@ use Illuminate\Support\Str;
 use Laravel\Socialite\Contracts\User as ProviderUser;
 use Laravel\Socialite\Two\InvalidStateException;
 use Symfony\Component\HttpFoundation\RedirectResponse as SymfonyRedirectResponse;
-use Wallo\FilamentCompanies\ConnectedAccount;
-use Wallo\FilamentCompanies\Contracts\CreatesConnectedAccounts;
-use Wallo\FilamentCompanies\Contracts\CreatesUserFromProvider;
-use Wallo\FilamentCompanies\Contracts\GeneratesProviderRedirect;
-use Wallo\FilamentCompanies\Contracts\HandlesInvalidState;
-use Wallo\FilamentCompanies\Contracts\ResolvesSocialiteUsers;
-use Wallo\FilamentCompanies\Contracts\UpdatesConnectedAccounts;
-use Wallo\FilamentCompanies\Enums\Feature;
-use Wallo\FilamentCompanies\FilamentCompanies;
-use Wallo\FilamentCompanies\Pages\User\Profile;
+use TFSThiagoBR98\FilamentTenant\ConnectedAccount;
+use TFSThiagoBR98\FilamentTenant\Contracts\CreatesConnectedAccounts;
+use TFSThiagoBR98\FilamentTenant\Contracts\CreatesUserFromProvider;
+use TFSThiagoBR98\FilamentTenant\Contracts\GeneratesProviderRedirect;
+use TFSThiagoBR98\FilamentTenant\Contracts\HandlesInvalidState;
+use TFSThiagoBR98\FilamentTenant\Contracts\ResolvesSocialiteUsers;
+use TFSThiagoBR98\FilamentTenant\Contracts\UpdatesConnectedAccounts;
+use TFSThiagoBR98\FilamentTenant\Enums\Feature;
+use TFSThiagoBR98\FilamentTenant\FilamentCompanies;
+use TFSThiagoBR98\FilamentTenant\Pages\User\Profile;
 
 class OAuthController extends Controller
 {

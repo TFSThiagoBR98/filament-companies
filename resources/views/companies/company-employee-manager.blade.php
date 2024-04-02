@@ -1,5 +1,5 @@
 @php
-    $modals = \Wallo\FilamentCompanies\FilamentCompanies::getModals();
+    $modals = \TFSThiagoBR98\FilamentTenant\FilamentCompanies::getModals();
 @endphp
 
 <div>
@@ -165,13 +165,13 @@
                             <td colspan="1" class="px-6 py-4 whitespace-nowrap">
                                 <div class="space-x-2 text-right">
                                     <!-- Manage Company Employee Role -->
-                                    @if (Gate::check('updateCompanyEmployee', $company) && Wallo\FilamentCompanies\FilamentCompanies::hasRoles())
+                                    @if (Gate::check('updateCompanyEmployee', $company) && TFSThiagoBR98\FilamentTenant\FilamentCompanies::hasRoles())
                                         <x-filament::button size="sm" outlined="true" color="primary" wire:click="manageRole('{{ $user->id }}')">
-                                            {{ Wallo\FilamentCompanies\FilamentCompanies::findRole($user->employeeship->role)->name }}
+                                            {{ TFSThiagoBR98\FilamentTenant\FilamentCompanies::findRole($user->employeeship->role)->name }}
                                         </x-filament::button>
-                                    @elseif (Wallo\FilamentCompanies\FilamentCompanies::hasRoles())
+                                    @elseif (TFSThiagoBR98\FilamentTenant\FilamentCompanies::hasRoles())
                                         <x-filament::button size="sm" disabled="true" outlined="true" color="gray">
-                                            {{ Wallo\FilamentCompanies\FilamentCompanies::findRole($user->employeeship->role)->name }}
+                                            {{ TFSThiagoBR98\FilamentTenant\FilamentCompanies::findRole($user->employeeship->role)->name }}
                                         </x-filament::button>
                                     @endif
 

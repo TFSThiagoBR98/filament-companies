@@ -1,6 +1,6 @@
 <?php
 
-namespace Wallo\FilamentCompanies\Pages\User;
+namespace TFSThiagoBR98\FilamentTenant\Pages\User;
 
 use Exception;
 use Filament\Facades\Filament;
@@ -22,8 +22,8 @@ use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\HtmlString;
 use Illuminate\Support\Str;
-use Laravel\Sanctum\PersonalAccessToken;
-use Wallo\FilamentCompanies\FilamentCompanies;
+use Laravel\Passport\Token;
+use TFSThiagoBR98\FilamentTenant\FilamentCompanies;
 
 class PersonalAccessTokens extends Page implements Tables\Contracts\HasTable
 {
@@ -57,8 +57,7 @@ class PersonalAccessTokens extends Page implements Tables\Contracts\HasTable
     {
         $auth = Filament::auth();
 
-        return PersonalAccessToken::whereTokenableId($auth->user()?->getAuthIdentifier())
-            ->whereTokenableType(FilamentCompanies::userModel());
+        return Token::whereUserId($auth->user()?->getAuthIdentifier());
     }
 
     public function table(Table $table): Table

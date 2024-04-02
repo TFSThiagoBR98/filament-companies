@@ -35,15 +35,15 @@ use Illuminate\Session\Middleware\AuthenticateSession;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
-use Wallo\FilamentCompanies\Actions\GenerateRedirectForProvider;
-use Wallo\FilamentCompanies\Enums\Feature;
-use Wallo\FilamentCompanies\Enums\Provider;
-use Wallo\FilamentCompanies\FilamentCompanies;
-use Wallo\FilamentCompanies\Pages\Auth\Login;
-use Wallo\FilamentCompanies\Pages\Auth\Register;
-use Wallo\FilamentCompanies\Pages\Company\CompanySettings;
-use Wallo\FilamentCompanies\Pages\Company\CreateCompany;
-use Wallo\FilamentCompanies\Pages\User\Profile;
+use TFSThiagoBR98\FilamentTenant\Actions\GenerateRedirectForProvider;
+use TFSThiagoBR98\FilamentTenant\Enums\Feature;
+use TFSThiagoBR98\FilamentTenant\Enums\Provider;
+use TFSThiagoBR98\FilamentTenant\FilamentCompanies;
+use TFSThiagoBR98\FilamentTenant\Pages\Auth\Login;
+use TFSThiagoBR98\FilamentTenant\Pages\Auth\Register;
+use TFSThiagoBR98\FilamentTenant\Pages\Company\CompanySettings;
+use TFSThiagoBR98\FilamentTenant\Pages\Company\CreateCompany;
+use TFSThiagoBR98\FilamentTenant\Pages\User\Profile;
 
 class FilamentCompaniesServiceProvider extends PanelProvider
 {

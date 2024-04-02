@@ -1,6 +1,6 @@
 <?php
 
-namespace Wallo\FilamentCompanies\Http\Livewire;
+namespace TFSThiagoBR98\FilamentTenant\Http\Livewire;
 
 use Filament\Notifications\Notification;
 use Illuminate\Auth\Access\AuthorizationException;
@@ -12,13 +12,13 @@ use Illuminate\Routing\Redirector;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use Livewire\Component;
-use Wallo\FilamentCompanies\Actions\UpdateCompanyEmployeeRole;
-use Wallo\FilamentCompanies\Contracts\AddsCompanyEmployees;
-use Wallo\FilamentCompanies\Contracts\InvitesCompanyEmployees;
-use Wallo\FilamentCompanies\Contracts\RemovesCompanyEmployees;
-use Wallo\FilamentCompanies\FilamentCompanies;
-use Wallo\FilamentCompanies\RedirectsActions;
-use Wallo\FilamentCompanies\Role;
+use TFSThiagoBR98\FilamentTenant\Actions\UpdateCompanyEmployeeRole;
+use TFSThiagoBR98\FilamentTenant\Contracts\AddsCompanyEmployees;
+use TFSThiagoBR98\FilamentTenant\Contracts\InvitesCompanyEmployees;
+use TFSThiagoBR98\FilamentTenant\Contracts\RemovesCompanyEmployees;
+use TFSThiagoBR98\FilamentTenant\FilamentCompanies;
+use TFSThiagoBR98\FilamentTenant\RedirectsActions;
+use TFSThiagoBR98\FilamentTenant\Role;
 
 class CompanyEmployeeManager extends Component
 {

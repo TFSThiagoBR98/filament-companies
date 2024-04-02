@@ -1,10 +1,10 @@
 <?php
 
-namespace Wallo\FilamentCompanies\Contracts;
+namespace TFSThiagoBR98\FilamentTenant\Contracts;
 
 use Illuminate\Contracts\Auth\Authenticatable;
 use Laravel\Socialite\Contracts\User as ProviderUser;
-use Wallo\FilamentCompanies\ConnectedAccount;
+use TFSThiagoBR98\FilamentTenant\ConnectedAccount;
 
 interface CreatesConnectedAccounts
 {

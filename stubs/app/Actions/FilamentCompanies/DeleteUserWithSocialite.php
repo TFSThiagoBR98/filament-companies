@@ -5,8 +5,8 @@ namespace App\Actions\FilamentCompanies;
 use App\Models\Company;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
-use Wallo\FilamentCompanies\Contracts\DeletesCompanies;
-use Wallo\FilamentCompanies\Contracts\DeletesUsers;
+use TFSThiagoBR98\FilamentTenant\Contracts\DeletesCompanies;
+use TFSThiagoBR98\FilamentTenant\Contracts\DeletesUsers;
 
 class DeleteUser implements DeletesUsers
 {

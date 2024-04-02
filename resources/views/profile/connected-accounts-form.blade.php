@@ -1,5 +1,5 @@
 @php
-    $modals = \Wallo\FilamentCompanies\FilamentCompanies::getModals();
+    $modals = \TFSThiagoBR98\FilamentTenant\FilamentCompanies::getModals();
 @endphp
 
 <x-filament-companies::grid-section md="2">
@@ -35,7 +35,7 @@
                     <x-slot name="action">
                         @if ($account !== null)
                             <div class="flex items-center justify-end gap-x-2">
-                                @if ($account->avatar_path !== null && Wallo\FilamentCompanies\FilamentCompanies::managesProfilePhotos() && \Wallo\FilamentCompanies\Enums\Feature::ProviderAvatars->isEnabled())
+                                @if ($account->avatar_path !== null && TFSThiagoBR98\FilamentTenant\FilamentCompanies::managesProfilePhotos() && \TFSThiagoBR98\FilamentTenant\Enums\Feature::ProviderAvatars->isEnabled())
                                     <x-filament::button size="sm"
                                                         wire:click="setAvatarAsProfilePhoto('{{ $account->id }}')">
                                         {{ __('filament-companies::default.buttons.use_avatar_as_profile_photo') }}
@@ -50,7 +50,7 @@
                                 @endif
                             </div>
                         @else
-                            <x-filament::button tag="a" color="gray" size="sm" href="{{ \Wallo\FilamentCompanies\FilamentCompanies::generateOAuthRedirectUrl($provider) }}">
+                            <x-filament::button tag="a" color="gray" size="sm" href="{{ \TFSThiagoBR98\FilamentTenant\FilamentCompanies::generateOAuthRedirectUrl($provider) }}">
                                 {{ __('filament-companies::default.buttons.connect') }}
                             </x-filament::button>
                         @endif

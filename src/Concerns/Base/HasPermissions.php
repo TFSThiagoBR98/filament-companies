@@ -1,8 +1,8 @@
 <?php
 
-namespace Wallo\FilamentCompanies\Concerns\Base;
+namespace TFSThiagoBR98\FilamentTenant\Concerns\Base;
 
-use Wallo\FilamentCompanies\Role;
+use TFSThiagoBR98\FilamentTenant\Role;
 
 trait HasPermissions
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Wallo\FilamentCompanies\Contracts;
+namespace TFSThiagoBR98\FilamentTenant\Contracts;
 
 /**
  * @method \Illuminate\Database\Eloquent\Model create(\Illuminate\Foundation\Auth\User $user, array $input)

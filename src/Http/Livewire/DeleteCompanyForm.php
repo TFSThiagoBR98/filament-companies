@@ -1,6 +1,6 @@
 <?php
 
-namespace Wallo\FilamentCompanies\Http\Livewire;
+namespace TFSThiagoBR98\FilamentTenant\Http\Livewire;
 
 use Filament\Notifications\Notification;
 use Illuminate\Auth\Access\AuthorizationException;
@@ -11,10 +11,10 @@ use Illuminate\Routing\Redirector;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use Livewire\Component;
-use Wallo\FilamentCompanies\Actions\ValidateCompanyDeletion;
-use Wallo\FilamentCompanies\Contracts\DeletesCompanies;
-use Wallo\FilamentCompanies\FilamentCompanies;
-use Wallo\FilamentCompanies\RedirectsActions;
+use TFSThiagoBR98\FilamentTenant\Actions\ValidateCompanyDeletion;
+use TFSThiagoBR98\FilamentTenant\Contracts\DeletesCompanies;
+use TFSThiagoBR98\FilamentTenant\FilamentCompanies;
+use TFSThiagoBR98\FilamentTenant\RedirectsActions;
 
 class DeleteCompanyForm extends Component
 {

@@ -1,13 +1,13 @@
 <?php
 
-namespace Wallo\FilamentCompanies\Actions;
+namespace TFSThiagoBR98\FilamentTenant\Actions;
 
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Validator;
-use Wallo\FilamentCompanies\Events\CompanyEmployeeUpdated;
-use Wallo\FilamentCompanies\FilamentCompanies;
-use Wallo\FilamentCompanies\Rules\Role;
+use TFSThiagoBR98\FilamentTenant\Events\CompanyEmployeeUpdated;
+use TFSThiagoBR98\FilamentTenant\FilamentCompanies;
+use TFSThiagoBR98\FilamentTenant\Rules\Role;
 
 class UpdateCompanyEmployeeRole
 {

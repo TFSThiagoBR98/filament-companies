@@ -1,6 +1,6 @@
 <?php
 
-namespace Wallo\FilamentCompanies\Http\Controllers;
+namespace TFSThiagoBR98\FilamentTenant\Http\Controllers;
 
 use Filament\Facades\Filament;
 use Filament\Notifications\Notification;
@@ -11,8 +11,8 @@ use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Str;
 use Livewire\Features\SupportRedirects\Redirector;
-use Wallo\FilamentCompanies\Contracts\AddsCompanyEmployees;
-use Wallo\FilamentCompanies\FilamentCompanies;
+use TFSThiagoBR98\FilamentTenant\Contracts\AddsCompanyEmployees;
+use TFSThiagoBR98\FilamentTenant\FilamentCompanies;
 
 class CompanyInvitationController extends Controller
 {

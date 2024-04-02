@@ -1,17 +1,17 @@
 <?php
 
-namespace Wallo\FilamentCompanies\Concerns\Base;
+namespace TFSThiagoBR98\FilamentTenant\Concerns\Base;
 
-use Wallo\FilamentCompanies\Contracts\AddsCompanyEmployees;
-use Wallo\FilamentCompanies\Contracts\CreatesCompanies;
-use Wallo\FilamentCompanies\Contracts\CreatesNewUsers;
-use Wallo\FilamentCompanies\Contracts\DeletesCompanies;
-use Wallo\FilamentCompanies\Contracts\DeletesUsers;
-use Wallo\FilamentCompanies\Contracts\InvitesCompanyEmployees;
-use Wallo\FilamentCompanies\Contracts\RemovesCompanyEmployees;
-use Wallo\FilamentCompanies\Contracts\UpdatesCompanyNames;
-use Wallo\FilamentCompanies\Contracts\UpdatesUserPasswords;
-use Wallo\FilamentCompanies\Contracts\UpdatesUserProfileInformation;
+use TFSThiagoBR98\FilamentTenant\Contracts\AddsCompanyEmployees;
+use TFSThiagoBR98\FilamentTenant\Contracts\CreatesCompanies;
+use TFSThiagoBR98\FilamentTenant\Contracts\CreatesNewUsers;
+use TFSThiagoBR98\FilamentTenant\Contracts\DeletesCompanies;
+use TFSThiagoBR98\FilamentTenant\Contracts\DeletesUsers;
+use TFSThiagoBR98\FilamentTenant\Contracts\InvitesCompanyEmployees;
+use TFSThiagoBR98\FilamentTenant\Contracts\RemovesCompanyEmployees;
+use TFSThiagoBR98\FilamentTenant\Contracts\UpdatesCompanyNames;
+use TFSThiagoBR98\FilamentTenant\Contracts\UpdatesUserPasswords;
+use TFSThiagoBR98\FilamentTenant\Contracts\UpdatesUserProfileInformation;
 
 trait HasBaseActionBindings
 {

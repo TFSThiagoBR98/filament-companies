@@ -2,12 +2,15 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use Stancl\Tenancy\Database\Concerns\CentralConnection;
+use TFSThiagoBR98\FilamentTenant\Models\BaseModel;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Wallo\FilamentCompanies\FilamentCompanies;
+use TFSThiagoBR98\FilamentTenant\FilamentCompanies;
 
-class CompanyInvitation extends Model
+class CompanyInvitation extends BaseModel
 {
+    use CentralConnection;
+
     /**
      * The attributes that are mass assignable.
      *

@@ -1,5 +1,5 @@
 {
-    "name": "andrewdwallo/filament-companies",
+    "name": "tfsthiagobr98/filament-companies",
     "description": "A comprehensive Laravel authentication and authorization system designed for Filament, focusing on multi-tenant company management.",
     "keywords": [
         "andrewdwallo",
@@ -16,12 +16,17 @@
         "crm",
         "business management"
     ],
-    "homepage": "https://github.com/andrewdwallo/filament-companies",
+    "homepage": "https://github.com/TFSThiagoBR98/filament-companies",
     "license": "MIT",
     "authors": [
         {
             "name": "Andrew Wallo",
             "email": "andrewdwallo@gmail.com",
+            "role": "Developer"
+        },
+        {
+            "name": "Thiago França",
+            "email": "contact@tfs.dev.br",
             "role": "Developer"
         }
     ],
@@ -32,12 +37,21 @@
         "illuminate/console": "^11.0",
         "illuminate/contracts": "^11.0",
         "illuminate/support": "^11.0",
+        "laravel/scout": "^10.8",
         "laravel/socialite": "^5.12",
-        "matomo/device-detector": "^6.1"
+        "matomo/device-detector": "^6.1",
+        "owen-it/laravel-auditing": "^13.6",
+        "rappasoft/laravel-authentication-log": "^4.0",
+        "spatie/laravel-medialibrary": "^11.4",
+        "spatie/laravel-permission": "^6.4",
+        "spatie/laravel-schemaless-attributes": "^2.5",
+        "spatie/laravel-sluggable": "^3.6",
+        "stancl/tenancy": "^3.8",
+        "tfsthiagobr98/filament-2fa": "^2.0"
     },
     "require-dev": {
         "laravel/pint": "^1.14",
-        "laravel/sanctum": "^4.0",
+        "laravel/passport": "^12.0",
         "livewire/livewire": "^3.4.9",
         "mockery/mockery": "^1.6",
         "orchestra/testbench": "^9.0",
@@ -45,7 +59,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Wallo\\FilamentCompanies\\": "src/"
+            "TFSThiagoBR98\\FilamentTenant\\": "src/"
         }
     },
     "autoload-dev": {
@@ -57,7 +71,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Wallo\\FilamentCompanies\\FilamentCompaniesServiceProvider"
+                "TFSThiagoBR98\\FilamentTenant\\FilamentCompaniesServiceProvider"
             ]
         }
     },

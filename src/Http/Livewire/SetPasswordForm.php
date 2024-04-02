@@ -1,6 +1,6 @@
 <?php
 
-namespace Wallo\FilamentCompanies\Http\Livewire;
+namespace TFSThiagoBR98\FilamentTenant\Http\Livewire;
 
 use Filament\Notifications\Notification;
 use Filament\Support\Colors\Color;
@@ -8,8 +8,8 @@ use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
-use Wallo\FilamentCompanies\Contracts\SetsUserPasswords;
-use Wallo\FilamentCompanies\FilamentCompanies;
+use TFSThiagoBR98\FilamentTenant\Contracts\SetsUserPasswords;
+use TFSThiagoBR98\FilamentTenant\FilamentCompanies;
 
 class SetPasswordForm extends Component
 {

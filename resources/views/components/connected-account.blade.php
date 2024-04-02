@@ -1,7 +1,7 @@
 @props(['provider', 'createdAt' => null])
 
 @php
-    $providerEnum = \Wallo\FilamentCompanies\Enums\Provider::tryFrom($provider);
+    $providerEnum = \TFSThiagoBR98\FilamentTenant\Enums\Provider::tryFrom($provider);
 @endphp
 
 @if($providerEnum?->isEnabled())

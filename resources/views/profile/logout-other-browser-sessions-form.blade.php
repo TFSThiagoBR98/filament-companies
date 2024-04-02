@@ -1,5 +1,5 @@
 @php
-    $modals = \Wallo\FilamentCompanies\FilamentCompanies::getModals();
+    $modals = \TFSThiagoBR98\FilamentTenant\FilamentCompanies::getModals();
 @endphp
 
 <x-filament-companies::grid-section md="2">

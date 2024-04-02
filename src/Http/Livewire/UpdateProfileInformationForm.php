@@ -1,6 +1,6 @@
 <?php
 
-namespace Wallo\FilamentCompanies\Http\Livewire;
+namespace TFSThiagoBR98\FilamentTenant\Http\Livewire;
 
 use Filament\Notifications\Notification;
 use Illuminate\Contracts\Auth\Authenticatable;
@@ -8,9 +8,9 @@ use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 use Livewire\WithFileUploads;
-use Wallo\FilamentCompanies\Contracts\UpdatesUserProfileInformation;
-use Wallo\FilamentCompanies\FilamentCompanies;
-use Wallo\FilamentCompanies\Pages\User\Profile;
+use TFSThiagoBR98\FilamentTenant\Contracts\UpdatesUserProfileInformation;
+use TFSThiagoBR98\FilamentTenant\FilamentCompanies;
+use TFSThiagoBR98\FilamentTenant\Pages\User\Profile;
 
 class UpdateProfileInformationForm extends Component
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Wallo\FilamentCompanies\Pages\Company;
+namespace TFSThiagoBR98\FilamentTenant\Pages\Company;
 
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
@@ -10,8 +10,8 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Str;
-use Wallo\FilamentCompanies\Events\AddingCompany;
-use Wallo\FilamentCompanies\FilamentCompanies;
+use TFSThiagoBR98\FilamentTenant\Events\AddingCompany;
+use TFSThiagoBR98\FilamentTenant\FilamentCompanies;
 
 class CreateCompany extends FilamentRegisterTenant
 {

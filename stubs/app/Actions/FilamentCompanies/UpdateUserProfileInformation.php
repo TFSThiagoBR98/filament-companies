@@ -6,7 +6,7 @@ use App\Models\User;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
-use Wallo\FilamentCompanies\Contracts\UpdatesUserProfileInformation;
+use TFSThiagoBR98\FilamentTenant\Contracts\UpdatesUserProfileInformation;
 
 class UpdateUserProfileInformation implements UpdatesUserProfileInformation
 {

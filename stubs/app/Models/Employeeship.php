@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use Wallo\FilamentCompanies\Employeeship as FilamentCompaniesEmployeeship;
+use TFSThiagoBR98\FilamentTenant\Employeeship as FilamentCompaniesEmployeeship;
 
 class Employeeship extends FilamentCompaniesEmployeeship
 {

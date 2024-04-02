@@ -11,11 +11,11 @@ use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
-use Wallo\FilamentCompanies\Contracts\InvitesCompanyEmployees;
-use Wallo\FilamentCompanies\Events\InvitingCompanyEmployee;
-use Wallo\FilamentCompanies\FilamentCompanies;
-use Wallo\FilamentCompanies\Mail\CompanyInvitation;
-use Wallo\FilamentCompanies\Rules\Role;
+use TFSThiagoBR98\FilamentTenant\Contracts\InvitesCompanyEmployees;
+use TFSThiagoBR98\FilamentTenant\Events\InvitingCompanyEmployee;
+use TFSThiagoBR98\FilamentTenant\FilamentCompanies;
+use TFSThiagoBR98\FilamentTenant\Mail\CompanyInvitation;
+use TFSThiagoBR98\FilamentTenant\Rules\Role;
 
 class InviteCompanyEmployee implements InvitesCompanyEmployees
 {

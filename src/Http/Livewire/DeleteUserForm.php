@@ -1,6 +1,6 @@
 <?php
 
-namespace Wallo\FilamentCompanies\Http\Livewire;
+namespace TFSThiagoBR98\FilamentTenant\Http\Livewire;
 
 use Filament\Facades\Filament;
 use Illuminate\Contracts\View\View;
@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\ValidationException;
 use Livewire\Component;
 use Livewire\Features\SupportRedirects\Redirector;
-use Wallo\FilamentCompanies\Contracts\DeletesUsers;
+use TFSThiagoBR98\FilamentTenant\Contracts\DeletesUsers;
 
 class DeleteUserForm extends Component
 {

@@ -9,11 +9,11 @@ use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Contracts\Validation\Rule;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Validator;
-use Wallo\FilamentCompanies\Contracts\AddsCompanyEmployees;
-use Wallo\FilamentCompanies\Events\AddingCompanyEmployee;
-use Wallo\FilamentCompanies\Events\CompanyEmployeeAdded;
-use Wallo\FilamentCompanies\FilamentCompanies;
-use Wallo\FilamentCompanies\Rules\Role;
+use TFSThiagoBR98\FilamentTenant\Contracts\AddsCompanyEmployees;
+use TFSThiagoBR98\FilamentTenant\Events\AddingCompanyEmployee;
+use TFSThiagoBR98\FilamentTenant\Events\CompanyEmployeeAdded;
+use TFSThiagoBR98\FilamentTenant\FilamentCompanies;
+use TFSThiagoBR98\FilamentTenant\Rules\Role;
 
 class AddCompanyEmployee implements AddsCompanyEmployees
 {

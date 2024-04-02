@@ -1,6 +1,6 @@
 <?php
 
-namespace Wallo\FilamentCompanies;
+namespace TFSThiagoBR98\FilamentTenant;
 
 use Filament\Contracts\Plugin;
 use Filament\Events\TenantSet;
@@ -8,14 +8,14 @@ use Filament\Panel;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Support\Facades\Event;
 use Livewire\Livewire;
-use Wallo\FilamentCompanies\Contracts\CreatesConnectedAccounts;
-use Wallo\FilamentCompanies\Contracts\CreatesUserFromProvider;
-use Wallo\FilamentCompanies\Contracts\HandlesInvalidState;
-use Wallo\FilamentCompanies\Contracts\UpdatesConnectedAccounts;
-use Wallo\FilamentCompanies\Http\Controllers\OAuthController;
-use Wallo\FilamentCompanies\Listeners\SwitchCurrentCompany;
-use Wallo\FilamentCompanies\Pages\Company\CompanySettings;
-use Wallo\FilamentCompanies\Pages\Company\CreateCompany;
+use TFSThiagoBR98\FilamentTenant\Contracts\CreatesConnectedAccounts;
+use TFSThiagoBR98\FilamentTenant\Contracts\CreatesUserFromProvider;
+use TFSThiagoBR98\FilamentTenant\Contracts\HandlesInvalidState;
+use TFSThiagoBR98\FilamentTenant\Contracts\UpdatesConnectedAccounts;
+use TFSThiagoBR98\FilamentTenant\Http\Controllers\OAuthController;
+use TFSThiagoBR98\FilamentTenant\Listeners\SwitchCurrentCompany;
+use TFSThiagoBR98\FilamentTenant\Pages\Company\CompanySettings;
+use TFSThiagoBR98\FilamentTenant\Pages\Company\CreateCompany;
 
 class FilamentCompanies implements Plugin
 {

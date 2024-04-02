@@ -1,6 +1,6 @@
 <x-filament-panels::page>
     @php
-        $components = \Wallo\FilamentCompanies\FilamentCompanies::getProfileComponents();
+        $components = \TFSThiagoBR98\FilamentTenant\FilamentCompanies::getProfileComponents();
     @endphp
 
     @foreach($components as $index => $component)

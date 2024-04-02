@@ -1,6 +1,6 @@
 <?php
 
-namespace Wallo\FilamentCompanies\Pages\User;
+namespace TFSThiagoBR98\FilamentTenant\Pages\User;
 
 use Filament\Pages\Page;
 use Illuminate\Support\Facades\Auth;

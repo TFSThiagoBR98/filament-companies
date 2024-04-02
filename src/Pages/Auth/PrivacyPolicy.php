@@ -1,13 +1,13 @@
 <?php
 
-namespace Wallo\FilamentCompanies\Pages\Auth;
+namespace TFSThiagoBR98\FilamentTenant\Pages\Auth;
 
 use Filament\Pages\Concerns\HasRoutes;
 use Filament\Pages\SimplePage;
 use Filament\Support\Enums\MaxWidth;
 use Illuminate\Contracts\Support\Htmlable;
 use Illuminate\Support\Str;
-use Wallo\FilamentCompanies\FilamentCompanies;
+use TFSThiagoBR98\FilamentTenant\FilamentCompanies;
 
 class PrivacyPolicy extends SimplePage
 {

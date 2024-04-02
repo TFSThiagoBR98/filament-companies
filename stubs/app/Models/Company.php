@@ -2,17 +2,10 @@
 
 namespace App\Models;
 
-use Filament\Models\Contracts\HasAvatar;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Wallo\FilamentCompanies\Company as FilamentCompaniesCompany;
-use Wallo\FilamentCompanies\Events\CompanyCreated;
-use Wallo\FilamentCompanies\Events\CompanyDeleted;
-use Wallo\FilamentCompanies\Events\CompanyUpdated;
+use TFSThiagoBR98\FilamentTenant\Company as FilamentCompaniesCompany;
 
-class Company extends FilamentCompaniesCompany implements HasAvatar
+class Company extends FilamentCompaniesCompany
 {
-    use HasFactory;
-
     /**
      * The attributes that are mass assignable.
      *
@@ -20,18 +13,9 @@ class Company extends FilamentCompaniesCompany implements HasAvatar
      */
     protected $fillable = [
         'name',
+        'slug',
+        'tenancy_db_name',
         'personal_company',
-    ];
-
-    /**
-     * The event map for the model.
-     *
-     * @var array<string, class-string>
-     */
-    protected $dispatchesEvents = [
-        'created' => CompanyCreated::class,
-        'updated' => CompanyUpdated::class,
-        'deleted' => CompanyDeleted::class,
     ];
 
     /**
@@ -44,10 +28,5 @@ class Company extends FilamentCompaniesCompany implements HasAvatar
         return [
             'personal_company' => 'boolean',
         ];
-    }
-
-    public function getFilamentAvatarUrl(): string
-    {
-        return $this->owner->profile_photo_url;
     }
 }

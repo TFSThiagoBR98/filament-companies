@@ -1,14 +1,14 @@
 <?php
 
-namespace Wallo\FilamentCompanies\Concerns\Base;
+namespace TFSThiagoBR98\FilamentTenant\Concerns\Base;
 
 use App\Models\CompanyInvitation;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\URL;
-use Wallo\FilamentCompanies\Http\Controllers\CompanyInvitationController;
-use Wallo\FilamentCompanies\Http\Controllers\OAuthController;
-use Wallo\FilamentCompanies\Pages\Auth\PrivacyPolicy;
-use Wallo\FilamentCompanies\Pages\Auth\Terms;
+use TFSThiagoBR98\FilamentTenant\Http\Controllers\CompanyInvitationController;
+use TFSThiagoBR98\FilamentTenant\Http\Controllers\OAuthController;
+use TFSThiagoBR98\FilamentTenant\Pages\Auth\PrivacyPolicy;
+use TFSThiagoBR98\FilamentTenant\Pages\Auth\Terms;
 
 trait HasRoutes
 {

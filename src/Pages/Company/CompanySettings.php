@@ -1,6 +1,6 @@
 <?php
 
-namespace Wallo\FilamentCompanies\Pages\Company;
+namespace TFSThiagoBR98\FilamentTenant\Pages\Company;
 
 use Filament\Facades\Filament;
 use Filament\Pages\Tenancy\EditTenantProfile as BaseEditTenantProfile;

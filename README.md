@@ -22,7 +22,7 @@ A comprehensive multi-tenant authentication and authorization solution designed 
 - 🔥 **Password Reset via Email**
 - 🔥 **Personal Profile Management**
 - 🔥 **Browser Session Management**
-- 🔥 **Sanctum**
+- 🔥 **Passport**
 - 🔥 **Company Management**
 - 🔥 **Employee Invitations via Email**
 - 🔥 **Roles & Permissions**
@@ -43,7 +43,7 @@ php artisan filament:install --panels
 
 Install the package
 ```shell
-composer require andrewdwallo/filament-companies
+composer require tfsthiagobr98/filament-companies
 ```
 
 Execute the following Artisan command to scaffold the application. You will be prompted to choose between installing the **Base package** or enabling **Socialite** support.
@@ -98,8 +98,8 @@ For this example, I will use the default panel that Filament provides when insta
 
 In your "Admin" panel, make sure to register the following pages:
 ```php
-use Wallo\FilamentCompanies\Pages\User\PersonalAccessTokens;
-use Wallo\FilamentCompanies\Pages\User\Profile;
+use TFSThiagoBR98\FilamentTenant\Pages\User\PersonalAccessTokens;
+use TFSThiagoBR98\FilamentTenant\Pages\User\Profile;
 
 public function panel(Panel $panel): Panel
 {
@@ -122,8 +122,8 @@ You may use the following as a guide:
 use Filament\Navigation\MenuItem;
 use Filament\Navigation\NavigationItem;
 use Illuminate\Support\Facades\Auth;
-use Wallo\FilamentCompanies\Pages\User\PersonalAccessTokens;
-use Wallo\FilamentCompanies\Pages\User\Profile;
+use TFSThiagoBR98\FilamentTenant\Pages\User\PersonalAccessTokens;
+use TFSThiagoBR98\FilamentTenant\Pages\User\Profile;
 
 public function panel(Panel $panel): Panel
 {
@@ -151,7 +151,7 @@ public function panel(Panel $panel): Panel
 You may change the value used for the User Panel using the `id` of the panel:
 ```php
 use Filament\Panel;
-use Wallo\FilamentCompanies\FilamentCompanies;
+use TFSThiagoBR98\FilamentTenant\FilamentCompanies;
 
 class FilamentCompaniesServiceProvider extends PanelProvider
 {
@@ -188,7 +188,7 @@ Filament has a built-in event that is fired when the application needs to set th
 
 ```php
 use Filament\Panel;
-use Wallo\FilamentCompanies\FilamentCompanies;
+use TFSThiagoBR98\FilamentTenant\FilamentCompanies;
 
 class FilamentCompaniesServiceProvider extends PanelProvider
 {
@@ -212,7 +212,7 @@ To do so, modify your `FilamentCompaniesServiceProvider` class as shown below:
 
 ```php
 use Filament\Panel;
-use Wallo\FilamentCompanies\FilamentCompanies;
+use TFSThiagoBR98\FilamentTenant\FilamentCompanies;
 
 class FilamentCompaniesServiceProvider extends PanelProvider
 {
@@ -308,7 +308,7 @@ Within your component's view, you may use the grid section component to match th
 To allow users to upload custom profile photos, you can enable this feature by including the `profilePhotos()` method in your `FilamentCompaniesServiceProvider`.
 ```php
 use Filament\Panel;
-use Wallo\FilamentCompanies\FilamentCompanies;
+use TFSThiagoBR98\FilamentTenant\FilamentCompanies;
 
 class FilamentCompaniesServiceProvider extends PanelProvider
 {
@@ -345,7 +345,7 @@ FilamentCompanies::make()
 To adjust the layout and behavior of modals, use the `modals()` method. Below are the package's default settings:
 ```php
 use Filament\Panel;
-use Wallo\FilamentCompanies\FilamentCompanies;
+use TFSThiagoBR98\FilamentTenant\FilamentCompanies;
 
 class FilamentCompaniesServiceProvider extends PanelProvider
 {
@@ -374,7 +374,7 @@ Unless specified otherwise, the package will send notifications. In order to dis
 
 ```php
 use Filament\Panel;
-use Wallo\FilamentCompanies\FilamentCompanies;
+use TFSThiagoBR98\FilamentTenant\FilamentCompanies;
 
 class FilamentCompaniesServiceProvider extends PanelProvider
 {
@@ -454,7 +454,7 @@ namespace App\Actions\FilamentCompanies;
 
 use App\Models\User;
 use Filament\Notifications\Notification;
-use Wallo\FilamentCompanies\Contracts\UpdatesUserPasswords;
+use TFSThiagoBR98\FilamentTenant\Contracts\UpdatesUserPasswords;
 
 class UpdateUserPassword implements UpdatesUserPasswords
 {
@@ -539,9 +539,9 @@ You may use any Provider that [Laravel Socialite](https://laravel.com/docs/10.x/
 You may add or remove any Provider in the company panel configuration:
 ```php
 use Filament\Panel;
-use Wallo\FilamentCompanies\FilamentCompanies;
-use Wallo\FilamentCompanies\Enums\Feature;
-use Wallo\FilamentCompanies\Enums\Provider;
+use TFSThiagoBR98\FilamentTenant\FilamentCompanies;
+use TFSThiagoBR98\FilamentTenant\Enums\Feature;
+use TFSThiagoBR98\FilamentTenant\Enums\Provider;
 
 class FilamentCompaniesServiceProvider extends PanelProvider
 {
@@ -635,13 +635,13 @@ GITHUB_CLIENT_SECRET=hefliueoioffbo8338yhf2p9f4g2gg33
 
 - The following examples are a visual representation of the features this package supports that were provided by the methods implemented in Laravel Jetstream.
 - You may find all of the features as provided by the package [in the documentation](https://jetstream.laravel.com/3.x/features/teams.html).
-- Information about a User's companies may be accessed via the methods provided by the `Wallo\FilamentCompanies\HasCompanies` trait.
+- Information about a User's companies may be accessed via the methods provided by the `TFSThiagoBR98\FilamentTenant\HasCompanies` trait.
 - This trait is automatically applied to your application's `App\Models\User` model during installation.
 - This trait provides a variety of helpful methods that allow you to inspect a User's companies or company:
 
 ```php
 // Access a user's currently selected company...
-$user->currentCompany : Wallo\FilamentCompanies\Company
+$user->currentCompany : TFSThiagoBR98\FilamentTenant\Company
 
 // Access all of the companies (including owned companies) that a user belongs to...
 $user->allCompanies() : Illuminate\Support\Collection
@@ -653,7 +653,7 @@ $user->ownedCompanies : Illuminate\Database\Eloquent\Collection
 $user->companies : Illuminate\Database\Eloquent\Collection
 
 // Access a user's "personal" company...
-$user->personalCompany() : Wallo\FilamentCompanies\Company
+$user->personalCompany() : TFSThiagoBR98\FilamentTenant\Company
 
 // Determine if a user owns a given company...
 $user->ownsCompany($company) : bool
@@ -662,7 +662,7 @@ $user->ownsCompany($company) : bool
 $user->belongsToCompany($company) : bool
 
 // Get the role that the user is assigned on the company...
-$user->companyRole($company) : \Wallo\FilamentCompanies\Role
+$user->companyRole($company) : \TFSThiagoBR98\FilamentTenant\Role
 
 // Determine if the user has the given role on the given company...
 $user->hasCompanyRole($company, 'admin') : bool

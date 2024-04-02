@@ -1,6 +1,6 @@
 <?php
 
-namespace Wallo\FilamentCompanies\Concerns\Base;
+namespace TFSThiagoBR98\FilamentTenant\Concerns\Base;
 
 use Closure;
 use Illuminate\Support\Arr;
