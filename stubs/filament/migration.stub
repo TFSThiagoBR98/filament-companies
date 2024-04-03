@@ -1,0 +1,39 @@
+<?php
+
+declare(strict_types=1);
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+use {{ namespacedModel }} as Model;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up(): void
+    {
+        Schema::create(Model::TABLE, function (Blueprint $table) {
+            $table->uuid(Model::ATTRIBUTE_ID)->primary();
+
+            $table->string(Model::ATTRIBUTE_STATUS);
+            $table->longText(Model::ATTRIBUTE_NOTES)->nullable();
+            $table->schemalessAttributes(Model::ATTRIBUTE_EXTRA_ATTRIBUTES);
+            $table->timestampsTz(6);
+            $table->softDeletesTz(Model::ATTRIBUTE_DELETED_AT, 6);
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down(): void
+    {
+        Schema::dropIfExists(Model::TABLE);
+    }
+};

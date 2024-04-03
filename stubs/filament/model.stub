@@ -1,0 +1,70 @@
+<?php
+
+declare(strict_types=1);
+
+namespace {{ namespace }};
+
+use App\Enums;
+use TFSThiagoBR98\FilamentTenant\Models\BaseModelMedia;
+
+class {{ class }} extends BaseModelMedia
+{
+    /**
+     * The table associated with the model.
+     *
+     * @var string
+     */
+    final public const TABLE = '{{ tableName }}';
+
+    /**
+     * Table ID for foreign keys
+     *
+     * @var string
+     */
+    final public const FOREIGN_KEY = '{{ modelNameLowerCase }}_id';
+
+    /**
+     * Primary Key
+     */
+    final public const ATTRIBUTE_ID = 'id';
+
+    final public const ATTRIBUTE_STATUS = 'status';
+    final public const ATTRIBUTE_NOTES = 'notes';
+
+    /**
+     * The table associated with the model.
+     *
+     * @var string
+     */
+    protected $table = self::TABLE;
+
+    /**
+     * The primary key for the model.
+     *
+     * @var string
+     */
+    protected $primaryKey = self::ATTRIBUTE_ID;
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array<int,string>
+     */
+    protected $fillable = [
+        self::ATTRIBUTE_NAME,
+        self::ATTRIBUTE_STATUS,
+        self::ATTRIBUTE_NOTES,
+        self::ATTRIBUTE_EXTRA_ATTRIBUTES,
+    ];
+
+    /**
+     * The attributes that should be cast.
+     *
+     * @var array<string,string>
+     */
+    protected $casts = [
+        self::ATTRIBUTE_NAME => 'string',
+        self::ATTRIBUTE_STATUS => Enums\GenericStatus::class,
+        self::ATTRIBUTE_NOTES => 'string',
+    ];
+}
