@@ -2,31 +2,43 @@
 
 namespace App\Models;
 
-use Filament\Models\Contracts\FilamentUser;
-use Filament\Models\Contracts\HasAvatar;
-use Filament\Models\Contracts\HasDefaultTenant;
-use Filament\Models\Contracts\HasTenants;
-use Filament\Panel;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
-use Illuminate\Support\Collection;
-use Laravel\Passport\HasApiTokens;
-use TFSThiagoBR98\FilamentTenant\HasCompanies;
-use TFSThiagoBR98\FilamentTenant\HasConnectedAccounts;
-use TFSThiagoBR98\FilamentTenant\HasProfilePhoto;
-use TFSThiagoBR98\FilamentTenant\SetsProfilePhotoFromUrl;
+use Stancl\Tenancy\Database\Concerns\CentralConnection;
+use TFSThiagoBR98\FilamentTenant\Models\BaseModelMediaAuthenticatable;
 
-class User extends Authenticatable implements FilamentUser, HasAvatar, HasDefaultTenant, HasTenants
+class User extends BaseModelMediaAuthenticatable
 {
-    use HasApiTokens;
-    use HasCompanies;
-    use HasConnectedAccounts;
-    use HasFactory;
-    use HasProfilePhoto;
-    use Notifiable;
-    use SetsProfilePhotoFromUrl;
+    use CentralConnection;
+
+    /**
+     * The table associated with the model.
+     */
+    final public const TABLE = 'users';
+
+    /**
+     * Table ID for foreign keys
+     */
+    final public const FOREIGN_KEY = 'user_id';
+
+    /**
+     * Primary Key
+     */
+    final public const ATTRIBUTE_ID = 'id';
+
+    final public const ATTRIBUTE_NAME = 'name';
+    final public const ATTRIBUTE_TAX_ID = 'tax_number';
+    final public const ATTRIBUTE_EMAIL = 'email';
+    final public const ATTRIBUTE_PHONE = 'phone';
+    final public const ATTRIBUTE_EMAIL_VERIFIED_AT = 'email_verified_at';
+    final public const ATTRIBUTE_PASSWORD = 'password';
+    final public const ATTRIBUTE_REMEMBER_TOKEN = 'remember_token';
+    final public const ATTRIBUTE_PROFILE_PHOTO_URL = 'profile_photo_url';
+
+    /**
+     * Default Guard for the model
+     *
+     * @var string
+     */
+    protected $guard_name = 'web';
 
     /**
      * The attributes that are mass assignable.
@@ -34,9 +46,11 @@ class User extends Authenticatable implements FilamentUser, HasAvatar, HasDefaul
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
-        'email',
-        'password',
+        self::ATTRIBUTE_NAME,
+        self::ATTRIBUTE_EMAIL,
+        self::ATTRIBUTE_TAX_ID,
+        self::ATTRIBUTE_PHONE,
+        self::ATTRIBUTE_PASSWORD,
     ];
 
     /**
@@ -45,8 +59,8 @@ class User extends Authenticatable implements FilamentUser, HasAvatar, HasDefaul
      * @var array<int, string>
      */
     protected $hidden = [
-        'password',
-        'remember_token',
+        self::ATTRIBUTE_PASSWORD,
+        self::ATTRIBUTE_REMEMBER_TOKEN,
     ];
 
     /**
@@ -55,7 +69,7 @@ class User extends Authenticatable implements FilamentUser, HasAvatar, HasDefaul
      * @var array<int, string>
      */
     protected $appends = [
-        'profile_photo_url',
+        self::ATTRIBUTE_PROFILE_PHOTO_URL,
     ];
 
     /**
@@ -66,33 +80,8 @@ class User extends Authenticatable implements FilamentUser, HasAvatar, HasDefaul
     protected function casts(): array
     {
         return [
-            'email_verified_at' => 'datetime',
-            'password' => 'hashed',
+            self::ATTRIBUTE_EMAIL_VERIFIED_AT => 'datetime',
+            self::ATTRIBUTE_PASSWORD => 'hashed',
         ];
-    }
-
-    public function canAccessPanel(Panel $panel): bool
-    {
-        return true;
-    }
-
-    public function canAccessTenant(Model $tenant): bool
-    {
-        return $this->belongsToCompany($tenant);
-    }
-
-    public function getTenants(Panel $panel): array | Collection
-    {
-        return $this->allCompanies();
-    }
-
-    public function getDefaultTenant(Panel $panel): ?Model
-    {
-        return $this->currentCompany;
-    }
-
-    public function getFilamentAvatarUrl(): string
-    {
-        return $this->profile_photo_url;
     }
 }

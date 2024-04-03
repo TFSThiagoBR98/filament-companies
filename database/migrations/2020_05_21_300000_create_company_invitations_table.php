@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\CompanyInvitation;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -11,14 +12,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('company_invitations', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('company_id')->constrained()->cascadeOnDelete();
-            $table->string('email');
-            $table->string('role')->nullable();
-            $table->timestamps();
+        Schema::create(CompanyInvitation::TABLE, function (Blueprint $table) {
+            $table->uuid(CompanyInvitation::ATTRIBUTE_ID)->primary();
+            $table->foreignId(CompanyInvitation::ATTRIBUTE_FK_COMPANY_ID)->constrained()->cascadeOnDelete();
+            $table->string(CompanyInvitation::ATTRIBUTE_EMAIL);
+            $table->string(CompanyInvitation::ATTRIBUTE_ROLE)->nullable();
+            $table->timestampsTz();
 
-            $table->unique(['company_id', 'email']);
+            $table->unique([CompanyInvitation::ATTRIBUTE_FK_COMPANY_ID, CompanyInvitation::ATTRIBUTE_EMAIL]);
         });
     }
 
@@ -27,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('company_invitations');
+        Schema::dropIfExists(CompanyInvitation::TABLE);
     }
 };

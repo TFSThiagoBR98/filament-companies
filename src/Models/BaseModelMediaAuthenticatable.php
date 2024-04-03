@@ -21,13 +21,14 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\Access\Authorizable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Collection;
-use Stancl\Tenancy\Database\Concerns\CentralConnection;
 use Laragear\TwoFactor\Contracts\TwoFactorAuthenticatable;
 use Laragear\TwoFactor\TwoFactorAuthentication;
 use Laravel\Passport\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
 use TFSThiagoBR98\FilamentTenant\HasCompanies;
+use TFSThiagoBR98\FilamentTenant\HasConnectedAccounts;
 use TFSThiagoBR98\FilamentTenant\HasProfilePhoto;
+use TFSThiagoBR98\FilamentTenant\SetsProfilePhotoFromUrl;
 
 /**
  * BaseModelMediaAuthenticable
@@ -37,7 +38,6 @@ abstract class BaseModelMediaAuthenticatable extends BaseModelMedia implements
     AuthenticatableContract,
     AuthorizableContract,
     CanResetPasswordContract,
-    FilamentUser,
     FilamentUser,
     HasAvatar,
     HasDefaultTenant,
@@ -49,15 +49,16 @@ abstract class BaseModelMediaAuthenticatable extends BaseModelMedia implements
     use HasApiTokens;
     use Authorizable;
     use HasCompanies;
+    use HasConnectedAccounts;
     use HasProfilePhoto;
     use CanResetPassword;
     use HasVerifyEmail;
     use HasRoles;
     use HasVerifyEmail;
     use Notifiable;
+    use SetsProfilePhotoFromUrl;
     use AuthenticationLoggable;
     use TwoFactorAuthentication;
-    use CentralConnection;
 
     public function canImpersonate()
     {

@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Concerns\HasTimestamps;
+use Stancl\Tenancy\Database\Concerns\CentralConnection;
 use TFSThiagoBR98\FilamentTenant\ConnectedAccount as SocialiteConnectedAccount;
 use TFSThiagoBR98\FilamentTenant\Events\ConnectedAccountCreated;
 use TFSThiagoBR98\FilamentTenant\Events\ConnectedAccountDeleted;
@@ -10,7 +10,22 @@ use TFSThiagoBR98\FilamentTenant\Events\ConnectedAccountUpdated;
 
 class ConnectedAccount extends SocialiteConnectedAccount
 {
-    use HasTimestamps;
+    use CentralConnection;
+
+    /**
+     * The table associated with the model.
+     */
+    final public const TABLE = 'connected_accounts';
+
+    /**
+     * Table ID for foreign keys
+     */
+    final public const FOREIGN_KEY = 'connected_account_id';
+
+    /**
+     * Primary Key
+     */
+    final public const ATTRIBUTE_ID = 'id';
 
     /**
      * The attributes that are mass assignable.

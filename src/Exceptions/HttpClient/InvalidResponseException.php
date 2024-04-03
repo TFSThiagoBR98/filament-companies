@@ -1,0 +1,7 @@
+<?php
+
+namespace TFSThiagoBR98\FilamentTenant\Exceptions\HttpClient;
+
+class InvalidResponseException extends \RuntimeException
+{
+}

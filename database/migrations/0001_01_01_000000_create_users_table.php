@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -12,18 +13,18 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password')->nullable(
+        Schema::create(User::TABLE, function (Blueprint $table) {
+            $table->uuid(User::ATTRIBUTE_ID)->primary();
+            $table->string(User::ATTRIBUTE_NAME);
+            $table->string(User::ATTRIBUTE_EMAIL)->unique();
+            $table->timestamp(User::ATTRIBUTE_EMAIL_VERIFIED_AT)->nullable();
+            $table->string(User::ATTRIBUTE_PASSWORD)->nullable(
                 FilamentCompanies::hasSocialiteFeatures()
             );
             $table->rememberToken();
-            $table->foreignId('current_company_id')->nullable();
-            $table->foreignId('current_connected_account_id')->nullable();
-            $table->string('profile_photo_path', 2048)->nullable();
+            $table->foreignId(User::ATTRIBUTE_FK_CURRENT_COMPANY_ID)->nullable();
+            $table->foreignId(User::ATTRIBUTE_FK_CURRENT_CONNECTED_ACCOUNT_ID)->nullable();
+            $table->string(User::ATTRIBUTE_PROFILE_PHOTO_URL, 2048)->nullable();
             $table->timestamps();
         });
 
@@ -48,7 +49,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists(User::TABLE);
         Schema::dropIfExists('password_reset_tokens');
         Schema::dropIfExists('sessions');
     }
