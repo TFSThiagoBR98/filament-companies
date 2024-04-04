@@ -13,6 +13,7 @@ use Stancl\Tenancy\Database\Concerns\HasDatabase;
 use Stancl\Tenancy\Database\Concerns\HasDomains;
 use Stancl\Tenancy\Database\Concerns\InvalidatesResolverCache;
 use Stancl\Tenancy\Database\Concerns\TenantRun;
+use Stancl\Tenancy\Events;
 use TFSThiagoBR98\FilamentTenant\Models\BaseModelMedia;
 use Filament\Models\Contracts\HasAvatar;
 
