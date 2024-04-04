@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace App\Policies;
+namespace TFSThiagoBR98\FilamentTenant\Policies;
 
-use App\Contracts\CompanyOwned;
-use App\Contracts\UserOwned;
+use TFSThiagoBR98\FilamentTenant\Contracts\CompanyOwned;
+use TFSThiagoBR98\FilamentTenant\Contracts\UserOwned;
 use App\Models\Company;
 use App\Models\Employee;
-use App\Models\Permission;
+use TFSThiagoBR98\FilamentTenant\Models\Permission;
 use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 use Illuminate\Database\Eloquent\Model;
