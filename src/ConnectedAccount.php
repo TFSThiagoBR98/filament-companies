@@ -9,8 +9,8 @@ use Stancl\Tenancy\Database\Concerns\CentralConnection;
 use TFSThiagoBR98\FilamentTenant\Models\BaseModelMedia;
 
 /**
- * @property int $id
- * @property int $user_id
+ * @property string $id
+ * @property string $user_id
  * @property string $provider
  * @property string $provider_id
  * @property string $token

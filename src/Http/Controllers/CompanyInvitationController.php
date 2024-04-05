@@ -19,7 +19,7 @@ class CompanyInvitationController extends Controller
     /**
      * Accept a company invitation.
      */
-    public function accept(Request $request, int $invitationId): Redirector | RedirectResponse | null
+    public function accept(Request $request, string | int $invitationId): Redirector | RedirectResponse | null
     {
         $model = FilamentCompanies::companyInvitationModel();
 
@@ -52,7 +52,7 @@ class CompanyInvitationController extends Controller
      *
      * @throws AuthorizationException
      */
-    public function destroy(Request $request, int $invitationId): Redirector | RedirectResponse
+    public function destroy(Request $request, string | int $invitationId): Redirector | RedirectResponse
     {
         $model = FilamentCompanies::companyInvitationModel();
 
