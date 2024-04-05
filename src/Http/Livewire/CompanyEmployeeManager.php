@@ -111,7 +111,7 @@ class CompanyEmployeeManager extends Component
     /**
      * Cancel a pending company employee invitation.
      */
-    public function cancelCompanyInvitation(int $invitationId): void
+    public function cancelCompanyInvitation(int|string $invitationId): void
     {
         if (! empty($invitationId)) {
             $model = FilamentCompanies::companyInvitationModel();
@@ -125,7 +125,7 @@ class CompanyEmployeeManager extends Component
     /**
      * Allow the given user's role to be managed.
      */
-    public function manageRole(int $userId): void
+    public function manageRole(int|string $userId): void
     {
         $this->dispatch('open-modal', id: 'currentlyManagingRole');
         $this->managingRoleFor = FilamentCompanies::findUserByIdOrFail($userId);
@@ -196,7 +196,7 @@ class CompanyEmployeeManager extends Component
     /**
      * Confirm that the given company employee should be removed.
      */
-    public function confirmCompanyEmployeeRemoval(int $userId): void
+    public function confirmCompanyEmployeeRemoval(int|string $userId): void
     {
         $this->dispatch('open-modal', id: 'confirmingCompanyEmployeeRemoval');
         $this->companyEmployeeIdBeingRemoved = $userId;
