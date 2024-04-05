@@ -38,7 +38,7 @@ class CompanyEmployeeManager extends Component
     /**
      * The current role for the user that is having their role managed.
      */
-    public string $currentRole;
+    public ?string $currentRole;
 
     /**
      * The ID of the company employee being removed.
