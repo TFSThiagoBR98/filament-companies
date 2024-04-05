@@ -20,7 +20,14 @@ class CompanySettings extends BaseEditTenantProfile
 
     public static function getRelativeRouteName(): string
     {
-        return 'tenant-profile';
+        return 'profile';
+    }
+
+    public static function getRouteName(?string $panel = null): string
+    {
+        $panel = $panel ? Filament::getPanel($panel) : Filament::getCurrentPanel();
+
+        return $panel->generateRouteName(static::getRelativeRouteName());
     }
 
     public static function canView(Model $tenant): bool

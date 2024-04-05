@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Auth;
 
 class Profile extends Page
 {
+    protected static ?string $slug = 'user-profile';
+
     protected static string $view = 'filament-companies::filament.pages.user.profile';
 
     protected static bool $shouldRegisterNavigation = false;
