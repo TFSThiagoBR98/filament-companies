@@ -35,21 +35,21 @@
                             <div x-data="{ role: @entangle('addCompanyEmployeeForm.role').live }" class="relative z-0 mt-1 cursor-pointer rounded-lg border border-gray-200 dark:border-gray-700">
                                 @foreach ($this->roles as $index => $role)
                                     <button type="button"
-                                            @click="role = '{{ $role->key }}'"
+                                            @click="role = '{{ $role->getKey() }}'"
                                             @class([
                                                 'relative inline-flex w-full rounded-lg px-4 py-3 transition focus:z-10 focus:outline-none focus:ring-2 focus:border-primary-500 focus:ring-primary-500 dark:focus:border-primary-600 dark:focus:ring-primary-600',
                                                 'border-t border-gray-200 dark:border-gray-700 rounded-t-none' => ($index > 0),
                                                 'rounded-b-none' => (! $loop->last),
                                             ])
                                     >
-                                        <div :class="role === '{{ $role->key }}' || 'opacity-50'">
+                                        <div :class="role === '{{ $role->getKey() }}' || 'opacity-50'">
                                             <!-- Role Name -->
                                             <div class="flex items-center">
-                                                <div class="text-sm text-gray-600 dark:text-gray-400" :class="{'font-semibold': role === '{{ $role->key }}'}">
+                                                <div class="text-sm text-gray-600 dark:text-gray-400" :class="{'font-semibold': role === '{{ $role->getKey() }}'}">
                                                     {{ $role->name }}
                                                 </div>
 
-                                                <div x-cloak :class="{ 'hidden': role !== '{{ $role->key }}' }">
+                                                <div x-cloak :class="{ 'hidden': role !== '{{ $role->getKey() }}' }">
                                                     <x-heroicon-o-check-badge class="text-primary-500 ml-2 h-5 w-5" />
                                                 </div>
                                             </div>
@@ -207,21 +207,21 @@
              class="relative z-0 mt-1 cursor-pointer rounded-lg border border-gray-200 dark:border-gray-700">
             @foreach ($this->roles as $index => $role)
                 <button type="button"
-                        @click="role = '{{ $role->key }}'"
+                        @click="role = '{{ $role->getKey() }}'"
                         @class([
                             'relative inline-flex w-full rounded-lg px-4 py-3 transition focus:z-10 focus:outline-none focus:ring-2 focus:border-primary-500 focus:ring-primary-500 dark:focus:border-primary-600 dark:focus:ring-primary-600',
                             'border-t border-gray-200 dark:border-gray-700 rounded-t-none' => ($index > 0),
                             'rounded-b-none' => (! $loop->last),
                         ])
                 >
-                    <div :class="role === '{{ $role->key }}' || 'opacity-50'">
+                    <div :class="role === '{{ $role->getKey() }}' || 'opacity-50'">
                         <!-- Role Name -->
                         <div class="flex items-center">
-                            <div class="text-sm text-gray-600 dark:text-gray-100" :class="role === '{{ $role->key }}' ? 'font-semibold' : ''">
+                            <div class="text-sm text-gray-600 dark:text-gray-100" :class="role === '{{ $role->getKey() }}' ? 'font-semibold' : ''">
                                 {{ $role->name }}
                             </div>
 
-                            <div x-cloak :class="{ 'hidden': role !== '{{ $role->key }}' }">
+                            <div x-cloak :class="{ 'hidden': role !== '{{ $role->getKey() }}' }">
                                 <x-heroicon-o-check-badge class="text-primary-500 ml-2 h-5 w-5" />
                             </div>
                         </div>
