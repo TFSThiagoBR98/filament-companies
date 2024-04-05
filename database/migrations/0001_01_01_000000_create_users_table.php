@@ -17,6 +17,7 @@ return new class extends Migration
             $table->uuid(User::ATTRIBUTE_ID)->primary();
             $table->string(User::ATTRIBUTE_NAME);
             $table->string(User::ATTRIBUTE_EMAIL)->unique();
+            $table->string(User::ATTRIBUTE_TAX_ID)->nullable();
             $table->timestamp(User::ATTRIBUTE_EMAIL_VERIFIED_AT)->nullable();
             $table->string(User::ATTRIBUTE_PASSWORD)->nullable(
                 FilamentCompanies::hasSocialiteFeatures()
@@ -25,7 +26,11 @@ return new class extends Migration
             $table->foreignId(User::ATTRIBUTE_FK_CURRENT_COMPANY_ID)->nullable();
             $table->foreignId(User::ATTRIBUTE_FK_CURRENT_CONNECTED_ACCOUNT_ID)->nullable();
             $table->string(User::ATTRIBUTE_PROFILE_PHOTO_URL, 2048)->nullable();
-            $table->timestamps();
+
+            $table->schemalessAttributes(User::ATTRIBUTE_EXTRA_ATTRIBUTES);
+
+            $table->timestampsTz();
+            $table->softDeletesTz();
         });
 
         Schema::create('password_reset_tokens', function (Blueprint $table) {

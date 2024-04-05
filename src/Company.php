@@ -8,19 +8,22 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Collection;
 use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
+use Stancl\Tenancy\Contracts\TenantWithDatabase;
 use Stancl\Tenancy\Database\Concerns\CentralConnection;
 use Stancl\Tenancy\Database\Concerns\HasDatabase;
 use Stancl\Tenancy\Database\Concerns\HasDomains;
+use Stancl\Tenancy\Database\Concerns\HasInternalKeys;
 use Stancl\Tenancy\Database\Concerns\InvalidatesResolverCache;
 use Stancl\Tenancy\Database\Concerns\TenantRun;
 use Stancl\Tenancy\Events;
 use TFSThiagoBR98\FilamentTenant\Models\BaseModelMedia;
 use Filament\Models\Contracts\HasAvatar;
 
-abstract class Company extends BaseModelMedia implements HasAvatar
+abstract class Company extends BaseModelMedia implements HasAvatar, TenantWithDatabase
 {
     use HasDatabase;
     use HasDomains;
+    use HasInternalKeys;
     use CentralConnection;
     use HasSlug;
     use TenantRun;

@@ -14,10 +14,11 @@ return new class extends Migration
     {
         Schema::create(CompanyInvitation::TABLE, function (Blueprint $table) {
             $table->uuid(CompanyInvitation::ATTRIBUTE_ID)->primary();
-            $table->foreignId(CompanyInvitation::ATTRIBUTE_FK_COMPANY_ID)->constrained()->cascadeOnDelete();
+            $table->foreignUuid(CompanyInvitation::ATTRIBUTE_FK_COMPANY_ID)->constrained()->cascadeOnDelete();
             $table->string(CompanyInvitation::ATTRIBUTE_EMAIL);
             $table->string(CompanyInvitation::ATTRIBUTE_ROLE)->nullable();
             $table->timestampsTz();
+            $table->softDeletesTz();
 
             $table->unique([CompanyInvitation::ATTRIBUTE_FK_COMPANY_ID, CompanyInvitation::ATTRIBUTE_EMAIL]);
         });

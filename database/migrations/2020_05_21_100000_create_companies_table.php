@@ -14,11 +14,17 @@ return new class extends Migration
     {
         Schema::create(Company::TABLE, function (Blueprint $table) {
             $table->uuid(Company::ATTRIBUTE_ID)->primary();
-            $table->foreignId('user_id')->index();
-            $table->string('name');
-            $table->string('tenancy_db_name')->nullable();
-            $table->boolean('personal_company');
-            $table->timestamps();
+            $table->foreignUuid(Company::ATTRIBUTE_FK_USER_ID)->index();
+            $table->string(Company::ATTRIBUTE_SLUG);
+            $table->string(Company::ATTRIBUTE_NAME);
+            $table->string(Company::ATTRIBUTE_TAX_ID)->nullable();
+            $table->string(Company::ATTRIBUTE_TENANCY_DB_NAME)->nullable();
+            $table->string(Company::ATTRIBUTE_STATUS)->nullable();
+            $table->boolean(Company::ATTRIBUTE_PERSONAL_COMPANY)->default(true);
+            $table->boolean(Company::ATTRIBUTE_VISIBLE_TO_CLIENT)->default(true);
+            $table->schemalessAttributes(Company::ATTRIBUTE_EXTRA_ATTRIBUTES);
+            $table->timestampsTz();
+            $table->softDeletesTz();
         });
     }
 

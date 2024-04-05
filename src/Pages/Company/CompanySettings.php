@@ -18,6 +18,11 @@ class CompanySettings extends BaseEditTenantProfile
         return __('filament-companies::default.pages.titles.company_settings');
     }
 
+    public static function getRelativeRouteName(): string
+    {
+        return 'tenant-profile';
+    }
+
     public static function canView(Model $tenant): bool
     {
         try {

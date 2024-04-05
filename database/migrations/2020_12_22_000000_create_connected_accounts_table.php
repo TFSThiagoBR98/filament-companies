@@ -14,7 +14,7 @@ return new class extends Migration
     {
         Schema::create(ConnectedAccount::TABLE, function (Blueprint $table) {
             $table->uuid(ConnectedAccount::ATTRIBUTE_ID)->primary();
-            $table->foreignId('user_id');
+            $table->foreignUuid('user_id');
             $table->string('provider');
             $table->string('provider_id');
             $table->string('name')->nullable();
@@ -26,7 +26,9 @@ return new class extends Migration
             $table->string('secret')->nullable(); // OAuth1
             $table->string('refresh_token', 1000)->nullable(); // OAuth2
             $table->dateTime('expires_at')->nullable(); // OAuth2
-            $table->timestamps();
+            $table->schemalessAttributes(ConnectedAccount::ATTRIBUTE_EXTRA_ATTRIBUTES);
+            $table->timestampsTz();
+            $table->softDeletesTz();
 
             $table->index(['user_id', 'id']);
             $table->index(['provider', 'provider_id']);
