@@ -6,6 +6,7 @@ use Filament\Notifications\Notification;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Contracts\View\View;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Redirector;
@@ -238,9 +239,9 @@ class CompanyEmployeeManager extends Component
     /**
      * Get the available company employee roles.
      */
-    public function getRolesProperty(): array
+    public function getRolesProperty(): Collection
     {
-        return Role::all()->toArray();
+        return Role::all();
     }
 
     /**
