@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
 use Laravel\Passport\HasApiTokens;
+use TFSThiagoBR98\FilamentTenant\Models\Role;
 
 trait HasCompanies
 {
@@ -116,7 +117,7 @@ trait HasCompanies
     public function companyRole(mixed $company): ?Role
     {
         if ($this->ownsCompany($company)) {
-            return new OwnerRole;
+            return Role::findOrCreate('Owner', 'web');
         }
 
         if (! $this->belongsToCompany($company)) {
