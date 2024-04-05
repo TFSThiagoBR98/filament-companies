@@ -167,11 +167,11 @@
                                     <!-- Manage Company Employee Role -->
                                     @if (Gate::check('updateCompanyEmployee', $company) && TFSThiagoBR98\FilamentTenant\FilamentCompanies::hasRoles())
                                         <x-filament::button size="sm" outlined="true" color="primary" wire:click="manageRole('{{ $user->id }}')">
-                                            {{ TFSThiagoBR98\FilamentTenant\FilamentCompanies::findRole($user->employeeship->role)->name }}
+                                            {{ TFSThiagoBR98\FilamentTenant\FilamentCompanies::findRole($user->employeeship->role)?->name ?? 'No Role' }}
                                         </x-filament::button>
                                     @elseif (TFSThiagoBR98\FilamentTenant\FilamentCompanies::hasRoles())
                                         <x-filament::button size="sm" disabled="true" outlined="true" color="gray">
-                                            {{ TFSThiagoBR98\FilamentTenant\FilamentCompanies::findRole($user->employeeship->role)->name }}
+                                            {{ TFSThiagoBR98\FilamentTenant\FilamentCompanies::findRole($user->employeeship->role)?->name ?? 'No Role' }}
                                         </x-filament::button>
                                     @endif
 

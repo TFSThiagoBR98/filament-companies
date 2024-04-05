@@ -129,18 +129,5 @@ class FilamentCompaniesServiceProvider extends PanelProvider
     protected function configurePermissions(): void
     {
         FilamentCompanies::defaultApiTokenPermissions(['read']);
-
-        FilamentCompanies::role('admin', 'Administrator', [
-            'create',
-            'read',
-            'update',
-            'delete',
-        ])->description('Administrator users can perform any action.');
-
-        FilamentCompanies::role('editor', 'Editor', [
-            'read',
-            'create',
-            'update',
-        ])->description('Editor users have the ability to read, create, and update.');
     }
 }

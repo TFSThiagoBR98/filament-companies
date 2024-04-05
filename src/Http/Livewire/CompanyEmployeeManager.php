@@ -18,7 +18,7 @@ use TFSThiagoBR98\FilamentTenant\Contracts\InvitesCompanyEmployees;
 use TFSThiagoBR98\FilamentTenant\Contracts\RemovesCompanyEmployees;
 use TFSThiagoBR98\FilamentTenant\FilamentCompanies;
 use TFSThiagoBR98\FilamentTenant\RedirectsActions;
-use TFSThiagoBR98\FilamentTenant\Role;
+use TFSThiagoBR98\FilamentTenant\Models\Role;
 
 class CompanyEmployeeManager extends Component
 {
@@ -240,15 +240,7 @@ class CompanyEmployeeManager extends Component
      */
     public function getRolesProperty(): array
     {
-        return collect(FilamentCompanies::$roles)->transform(static function ($role) {
-            return with($role->jsonSerialize(), static function ($data) {
-                return (new Role(
-                    $data['key'],
-                    $data['name'],
-                    $data['permissions']
-                ))->description($data['description']);
-            });
-        })->values()->all();
+        return Role::all()->toArray();
     }
 
     /**

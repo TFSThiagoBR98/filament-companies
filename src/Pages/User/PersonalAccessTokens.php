@@ -24,6 +24,7 @@ use Illuminate\Support\HtmlString;
 use Illuminate\Support\Str;
 use Laravel\Passport\Token;
 use TFSThiagoBR98\FilamentTenant\FilamentCompanies;
+use TFSThiagoBR98\FilamentTenant\Models\Permission;
 
 class PersonalAccessTokens extends Page implements Tables\Contracts\HasTable
 {
@@ -131,7 +132,7 @@ class PersonalAccessTokens extends Page implements Tables\Contracts\HasTable
      */
     protected function getTableHeaderActions(): array
     {
-        $permissions = FilamentCompanies::$permissions;
+        $permissions = Permission::all()->toArray();
         $defaultPermissions = FilamentCompanies::$defaultPermissions;
 
         return [

@@ -2,7 +2,9 @@
 
 namespace TFSThiagoBR98\FilamentTenant\Concerns\Base;
 
-use TFSThiagoBR98\FilamentTenant\Role;
+use Spatie\Permission\Guard;
+use TFSThiagoBR98\FilamentTenant\Models\Permission;
+use TFSThiagoBR98\FilamentTenant\Models\Role;
 
 trait HasPermissions
 {
@@ -26,7 +28,7 @@ trait HasPermissions
      */
     public static function hasRoles(): bool
     {
-        return count(static::$roles) > 0;
+        return Role::count() > 0;
     }
 
     /**
@@ -34,23 +36,8 @@ trait HasPermissions
      */
     public static function findRole(string $key): ?Role
     {
-        return static::$roles[$key] ?? null;
-    }
-
-    /**
-     * Define a role.
-     */
-    public static function role(string $key, string $name, array $permissions): Role
-    {
-        static::$permissions = collect([...static::$permissions, ...$permissions])
-            ->unique()
-            ->sort()
-            ->values()
-            ->all();
-
-        return tap(new Role($key, $name, $permissions), static function ($role) use ($key) {
-            static::$roles[$key] = $role;
-        });
+        $guardName = Guard::getDefaultName(static::class);
+        return Role::findByParam(['name' => $key, 'guard_name' => $guardName]);
     }
 
     /**
@@ -58,7 +45,7 @@ trait HasPermissions
      */
     public static function hasPermissions(): bool
     {
-        return count(static::$permissions) > 0;
+        return Permission::count() > 0;
     }
 
     /**

@@ -3,7 +3,8 @@
 namespace TFSThiagoBR98\FilamentTenant\Rules;
 
 use Illuminate\Contracts\Validation\Rule;
-use TFSThiagoBR98\FilamentTenant\FilamentCompanies;
+use Spatie\Permission\Guard;
+use TFSThiagoBR98\FilamentTenant\Models\Role as ModelRole;
 
 class Role implements Rule
 {
@@ -15,7 +16,9 @@ class Role implements Rule
      */
     public function passes($attribute, $value): bool
     {
-        return array_key_exists($value, FilamentCompanies::$roles);
+        $guardName = Guard::getDefaultName(static::class);
+        $role = ModelRole::findByParam(['name' => $value, 'guard_name' => $guardName]);
+        return $role == null;
     }
 
     /**
