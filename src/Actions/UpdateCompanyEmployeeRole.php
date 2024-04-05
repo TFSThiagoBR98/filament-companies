@@ -16,7 +16,7 @@ class UpdateCompanyEmployeeRole
      *
      * @throws AuthorizationException
      */
-    public function update(mixed $user, mixed $company, int $companyEmployeeId, string $role): void
+    public function update(mixed $user, mixed $company, string|int $companyEmployeeId, string $role): void
     {
         Gate::forUser($user)->authorize('updateCompanyEmployee', $company);
 

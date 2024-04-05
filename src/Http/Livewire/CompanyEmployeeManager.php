@@ -129,7 +129,7 @@ class CompanyEmployeeManager extends Component
     {
         $this->dispatch('open-modal', id: 'currentlyManagingRole');
         $this->managingRoleFor = FilamentCompanies::findUserByIdOrFail($userId);
-        $this->currentRole = $this->managingRoleFor->companyRole($this->company)->key;
+        $this->currentRole = $this->managingRoleFor->companyRole($this->company)->name;
     }
 
     /**
